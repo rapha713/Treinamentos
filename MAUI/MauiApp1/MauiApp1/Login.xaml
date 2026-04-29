@@ -3,68 +3,88 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.Login"
              Title="Login">
+
     <Grid RowDefinitions="Auto,*,Auto" Padding="30">
-        <!--HEADER-->
-        <Label 
-            Text="Bem Vindo"
-            FontSize="28"
-            FontAttributes="Bold"
-            Grid.Row="0" />
-        
-        <!--FORM-->
-        <VerticalStackLayout Grid.Row="1" Spacing="15">
 
-            <Entry 
-                x:Name="UserEntry"
-                Placeholder="Digite seu usuário" />
+        <VerticalStackLayout Grid.Row="0" Spacing="10">
 
-            <Grid ColumnDefinitions="*,Auto">
+            <Label 
+                Text="Bem Vindo"
+                FontSize="32"
+                FontAttributes="Bold"
+                TextColor="#ac99ea"/>
 
-                <Entry 
-                    x:Name="PasswordEntry"
-                    Placeholder="Digite sua senha"
-                    IsPassword="True"
-                    Grid.Column="0"/>
+        </VerticalStackLayout>
 
-                <!--CLICAR PARA APARECER-->
-                <!--<Button 
-                    x:Name="TogglePasswordButton"
-                    Text="👁"
-                    WidthRequest="50"
-                    Grid.Column="1"
-                    Clicked="OnTogglePasswordClicked"/>-->
+        <VerticalStackLayout Grid.Row="1" Spacing="20">
 
-                <!--SEGURAR PARA APARECER-->
-                <Label 
-                    Text="👁"
-                    FontSize="20"
-                    VerticalOptions="Center"
-                    Grid.Column="1">
+            <Frame 
+                CornerRadius="12"
+                BackgroundColor="White"
+                Padding="10"
+                HasShadow="True">
 
-                    <Label.GestureRecognizers>
-                        <PointerGestureRecognizer 
-                            PointerPressed="OnPressed"
-                            PointerReleased="OnReleased"/>
-                    </Label.GestureRecognizers>
+                <Entry
+                    x:Name="UserEntry"
+                    Placeholder="Usuário"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"/>
+            </Frame>
 
-                </Label>
+            <Frame
+                CornerRadius="12"
+                BackgroundColor="White"
+                Padding="10"    
+                HasShadow="True">
 
-            </Grid>
+                <Grid ColumnDefinitions="*,Auto">
+
+                    <Entry 
+                        x:Name="PasswordEntry"
+                        Placeholder="Senha"
+                        IsPassword="True"
+                        BackgroundColor="Transparent"
+                        Grid.Column="0"
+                        TextColor="Black"/>
+
+                    <ImageButton 
+                        x:Name="TogglePasswordButton"
+                        Source="eye.png"
+                        WidthRequest="24"
+                        HeightRequest="24"
+                        BackgroundColor="Transparent"
+                        VerticalOptions="Center"
+                        Grid.Column="1"
+                        Clicked="OnTogglePasswordClicked"/>
+
+                    <!--SEGURAR PARA APARECER usando svg-->
+                    <!--<Grid.GestureRecognizers>
+                            <PointerGestureRecognizer 
+                                PointerEntered="OnHoverEnter"
+                                PointerExited="OnHoverExit"
+                                PointerPressed="OnPressed"
+                                PointerReleased="OnReleased"/>
+                        </Grid.GestureRecognizers>-->
+                </Grid>
+            </Frame>
 
             <Button 
                 x:Name="LoginButton"
                 Text="Entrar"
-                Clicked="OnLoginClicked"
-                />
+                BackgroundColor="#512BD4"
+                TextColor="White"
+                CornerRadius="12"
+                HeightRequest="50"
+                Clicked="OnLoginClicked"/>
 
             <ActivityIndicator
                 x:Name="LoadingIndicator"
                 IsRunning="False"
-                IsVisible="False"/>
+                IsVisible="False"
+                Color="#512BD4"/>
 
         </VerticalStackLayout>
 
-        <!--FOOTER-->
         <Label 
             Text="Esqueci minha senha"
             FontSize="12"
