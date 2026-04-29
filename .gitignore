@@ -1,7 +1,10 @@
 /.venv
 /.vscode
-/Angular
 /Java
 /Jenkins
 /MAUI
 /Python
+Angular/angular-bootcamp/.vscode/extensions.json
+Angular/angular-bootcamp/.vscode/launch.json
+Angular/angular-bootcamp/.vscode/mcp.json
+Angular/angular-bootcamp/.vscode/tasks.json
