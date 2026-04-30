@@ -15,3 +15,6 @@ def menor_venda(vendas):
 def vendas_acima_media(vendas):
     media = (sum(vendas) / len(vendas) if vendas else 0)
     return [v for v in vendas if v > media]
+
+def criar_usuario(nome, idade):
+    return {"nome": nome, "idade": idade}
