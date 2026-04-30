@@ -25,7 +25,7 @@
                 HasShadow="True">
 
                 <Entry
-                    x:Name="UserEntry"
+                    Text="{Binding User}"
                     Placeholder="Usuário"
                     BackgroundColor="Transparent"
                     TextColor="Black"/>
@@ -40,7 +40,7 @@
                 <Grid ColumnDefinitions="*,Auto">
 
                     <Entry 
-                        x:Name="PasswordEntry"
+                        Text="{Binding Password}"
                         Placeholder="Senha"
                         IsPassword="True"
                         BackgroundColor="Transparent"
@@ -75,7 +75,7 @@
                 TextColor="White"
                 CornerRadius="12"
                 HeightRequest="50"
-                Clicked="OnLoginClicked"/>
+                Command="{Binding LoginCommand}"/>
 
             <ActivityIndicator
                 x:Name="LoadingIndicator"
